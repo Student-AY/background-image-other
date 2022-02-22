@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 
 export default function App() {
   const [isEnabled,setIsEnabled] = useState(true);
-  const [text,setText] = useState("toggle switch")
+  const [text,setText] = useState("switching")
 
   const simpleAlert = () => {
     Alert.alert(
