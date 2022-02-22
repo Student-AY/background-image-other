@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , Switch, Button,Alert,SafeAreaView} from 'react-native';
+import { StyleSheet, Text, View , Switch, Button,Alert,SafeAreaView,ImageBackground} from 'react-native';
 import React, {useState} from 'react';
 
 export default function App() {
@@ -73,8 +73,11 @@ export default function App() {
     setIsEnabled(previousState => !previousState)
   }
 
+  const Separator = () => (
+    <View style={styles.separator}/>
+  )
   return (
-  <SafeAreaView style={{flex:1,backgroundColor:'tomato',padding:3}}>
+  <ImageBackground source={require('./app/img/backgroundimg.jpg')} style={{flex:1,padding:0}}>
     <View style={styles.container}>
       
       
@@ -90,47 +93,56 @@ export default function App() {
         value={isEnabled}
         />
         </View>
+        <Separator/>
 
-        <View style={{backgroundColor:'green',padding:15,height:320}}>
-          <SafeAreaView style={{padding:15,backgroundColor:'black'}}>
+        <View style={{padding:15,height:320}}>
+          <SafeAreaView style={{padding:45,backgroundColor:'black'}}>
+            
           <Button
           title='simpele alert'
           onPress={simpleAlert}
           />
+          <Separator/>
 
-          <Button
-          title='2 optie alert-button'
+
+          <Button title='2 optie alert-button'
           onPress={tweeOptieAlert}
           />
+          <Separator/>
 
-          <Button
-          title='3 optie alert-button'
+          <Button title='3 optie alert-button'
           onPress={drieOptieAlert}
           />
+          <Separator/>
+          
           </SafeAreaView>
         </View>
         
         
         
     
-    </SafeAreaView>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:'grey'
+    
   },
   SwitchAttrb:{
     fontWeight:'bold',
     fontSize:20,
-    fontFamily:'serif',
-    backgroundColor:'tomato',
-    borderRadius:5,
+    fontFamily:'serif',  
+    
+  },
+  separator: {
+    marginVertical: 0,
+    borderBottomColor: '#737373',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor:'green'
   },
   
   
