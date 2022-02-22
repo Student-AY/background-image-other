@@ -67,17 +67,23 @@ export default function App() {
   const toggleSwitch = () => {
     if(isEnabled){
       setText("Inactive");
+      <ImageBackground source={require('./app/img/img01.jpg')}/>
+      console.log(text);
     }else{
-      setText("Active")
+      setText("Active");
+      <ImageBackground source={require('./app/img/backgroundimg.jpg') }/>
+      console.log(text);
     }
     setIsEnabled(previousState => !previousState)
   }
+
+  
 
   const Separator = () => (
     <View style={styles.separator}/>
   )
   return (
-  <ImageBackground source={require('./app/img/backgroundimg.jpg')} style={{flex:1,padding:0}}>
+  <ImageBackground source={require('./app/img/backgroundimg.jpg')} style={{flex:1}}>
     <View style={styles.container}>
       
       
@@ -93,10 +99,10 @@ export default function App() {
         value={isEnabled}
         />
         </View>
-        <Separator/>
+        <Separator/> 
 
         <View style={{padding:15,height:320}}>
-          <SafeAreaView style={{padding:45,backgroundColor:'black'}}>
+          <SafeAreaView style={{padding:45,backgroundColor:'black',alignContent:'space-between'}}>
             
           <Button
           title='simpele alert'
@@ -140,7 +146,7 @@ const styles = StyleSheet.create({
   },
   separator: {
     marginVertical: 0,
-    borderBottomColor: '#737373',
+    borderBottomColor: '#2196F3',
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor:'green'
   },
