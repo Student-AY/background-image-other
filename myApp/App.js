@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , Switch, Button,Alert} from 'react-native';
+import { StyleSheet, Text, View , Switch, Button,Alert,SafeAreaView} from 'react-native';
 import React, {useState} from 'react';
 
 export default function App() {
@@ -74,6 +74,7 @@ export default function App() {
   }
 
   return (
+  <SafeAreaView style={{flex:1,backgroundColor:'tomato',padding:3}}>
     <View style={styles.container}>
       
       
@@ -88,8 +89,10 @@ export default function App() {
         onValueChange={toggleSwitch}
         value={isEnabled}
         />
+        </View>
 
-        <View style={{}}>
+        <View style={{backgroundColor:'green',padding:15,height:320}}>
+          <SafeAreaView style={{padding:15,backgroundColor:'black'}}>
           <Button
           title='simpele alert'
           onPress={simpleAlert}
@@ -104,20 +107,23 @@ export default function App() {
           title='3 optie alert-button'
           onPress={drieOptieAlert}
           />
+          </SafeAreaView>
         </View>
         
         
         
-    </View>
+    
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'grey'
   },
   SwitchAttrb:{
     fontWeight:'bold',
