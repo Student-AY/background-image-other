@@ -68,11 +68,11 @@ export default function App() {
     if(isEnabled){
       setText("Inactive");
       <ImageBackground source={require('./app/img/img01.jpg')}/>
-      console.log(text);
+      
     }else{
       setText("Active");
       <ImageBackground source={require('./app/img/backgroundimg.jpg') }/>
-      console.log(text);
+      
     }
     setIsEnabled(previousState => !previousState)
   }
